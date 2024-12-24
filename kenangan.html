@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foto Kita - Tunangan</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ff9d9d, #ff7b7b);
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Posisi di atas */
+      text-align: center;
+      color: white;
+      flex-direction: column; /* Menyusun konten secara vertikal */
+    }
+    .container {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 50px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      width: 80%;
+      max-width: 1200px;
+      overflow-y: auto; /* Scroll vertikal */
+      max-height: 90vh; /* Batasi tinggi kontainer supaya bisa scroll */
+    }
+    h1 {
+      font-size: 36px;
+      color: #ff4d4d;
+      margin-bottom: 20px;
+    }
+    .gallery {
+      display: block;
+      margin-bottom: 20px; /* Jarak antar gambar */
+    }
+    .gallery img {
+      height: 500px;
+      width: 100%; /* Gambar mengikuti lebar kontainer */
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px; /* Jarak antar gambar */
+    }
+    .scroll-indicator {
+      font-size: 18px;
+      color: white;
+      margin-top: 20px;
+      animation: bounce 1.5s infinite;
+    }
+    .back-button {
+      padding: 10px 20px;
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+    .back-button:hover {
+      background-color: #ff1a1a;
+    }
+    /* Animasi untuk memberi tahu pengguna untuk scroll */
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Foto Kita</h1>
+    <div class="gallery">
+      <img src="foto/tak.jpg" alt="Kenangan 1">
+      <img src="foto/gg.jpg" alt="Kenangan 2">
+      <img src="foto/ff.jpg" alt="Kenangan 3">
+    </div>
+    <!-- Teks petunjuk scroll -->
+    <div class="scroll-indicator"></div>
+    
+    <!-- Link menuju halaman Love -->
+    <a href="love.html" class="back-button">Lanjutkan Ke Hadiah Cinta</a>
+  </div>
+</body>
+</html>

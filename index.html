@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ungkapkan Cinta - Tunangan</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ff7b7b, #ffb6c1);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+    }
+    .container {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 50px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      width: 80%;
+      max-width: 600px;
+      animation: fadeIn 2s ease-out;
+    }
+    h1 {
+      font-size: 36px;
+      color: #ff4d4d;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    button {
+      padding: 15px 25px;
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 20px;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #ff1a1a;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Untuk Tunanganku Tersayang</h1>
+    <p>
+      Dalam setiap hembusan angin, aku merasakan hadirnya dirimu.  
+      Setiap detik bersamamu adalah kebahagiaan yang tak tergantikan.  
+      Hatiku milikmu, dan cintaku hanya untukmu, untuk selamanya.  
+      Di sini, aku ingin berbagi impian kita, masa depan yang penuh warna dan senyum,  
+      yang akan kita rajut bersama sepanjang hidup.  
+    </p>
+    <form id="cintaForm">
+      <button type="submit">Lanjut</button>
+    </form>
+  </div>
+
+  <script>
+    // Mengambil form dan tombol
+    const form = document.getElementById('cintaForm');
+
+    // Menambahkan event listener untuk form submission
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Mencegah form agar tidak terkirim
+
+      // Pindahkan ke halaman kenangan.html setelah tombol lanjut ditekan
+      window.location.href = 'kenangan.html';
+    });
+  </script>
+</body>
+</html>

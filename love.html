@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hadiah Cinta - Tunangan</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ff9d9d, #ff7b7b);
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      flex-direction: column;
+    }
+    .container {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 50px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      width: 80%;
+      max-width: 1200px;
+    }
+    h1 {
+      font-size: 36px;
+      color: #ff4d4d;
+      margin-bottom: 20px;
+    }
+    .gift {
+      cursor: pointer;
+    }
+    .gift img {
+      width: 80%; /* Gambar mengikuti lebar kontainer */
+      border-radius: 15px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .gift img:hover {
+      transform: scale(1.1); /* Efek zoom saat hover */
+    }
+    .scroll-indicator {
+      font-size: 18px;
+      color: black; /* Mengubah warna teks menjadi hitam */
+      margin-top: 20px;
+      animation: bounce 1.5s infinite;
+    }
+    .back-button {
+      padding: 10px 20px;
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+    .back-button:hover {
+      background-color: #ff1a1a;
+    }
+
+    /* Animasi hati yang muncul */
+    .love {
+      position: absolute;
+      font-size: 50px; /* Membesarkan ukuran hati */
+      color: red;
+      animation: moveHeart 2s ease-in-out forwards, fadeOut 2s forwards, explode 0.5s forwards;
+    }
+
+    @keyframes moveHeart {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(0, -100px);
+        opacity: 0;
+      }
+    }
+
+    /* Efek hilang perlahan */
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    /* Efek pecah satu per satu */
+    @keyframes explode {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.5); /* Membesarkan hati */
+      }
+      100% {
+        transform: scale(0);
+        opacity: 0;
+      }
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hadiah Cinta Untukmu</h1>
+    <div class="gift" onclick="showHearts(event)">
+      <img src="foto/hbh.jpg" alt="Hadiah Cinta">
+    </div>
+    <div class="scroll-indicator">Klik gambar untuk melihat kejutan cinta!</div>
+    <a href="kenangan.html" class="back-button">Kembali ke Foto</a>
+  </div>
+
+  <script>
+    function showHearts(event) {
+      // Menampilkan lebih sedikit hati dan dengan efek pecah
+      for (let i = 0; i < 30; i++) { // Mengurangi jumlah hati
+        let heart = document.createElement("div");
+        heart.classList.add("love");
+        heart.textContent = "❤️";
+        
+        // Set posisi acak untuk hati yang muncul, dengan jarak lebih jauh
+        heart.style.left = `${event.pageX + Math.random() * 300 - 150}px`; // Menambah jarak horisontal
+        heart.style.top = `${event.pageY + Math.random() * 300 - 150}px`; // Menambah jarak vertikal
+        
+        document.body.appendChild(heart);
+
+        // Hapus hati setelah animasi selesai
+        setTimeout(() => {
+          heart.remove();
+        }, 2500); // Menghapus setelah animasi selesai
+      }
+    }
+  </script>
+</body>
+</html>
